@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+:root {
+    --softblue: hsl(231, 69%, 60%);
+    --softred: hsl(0, 94%, 66%); 
+    --grayishblue: hsl(229, 8%, 60%);
+    --verydarkblue: hsl(229, 31%, 21%);
+    --fontfamily:  'Rubik', sans-serif;
+    --regularfontweight: 400;
+    --mediumfontweight: 500;
+    --padding: 0 30px;
+    --largepadding: 0 100px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+svg {
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    width: 100%;
+    position: relative;
+}
+
+.mobile-nav, .thedrop {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav {
+    padding: var(--padding);
+}
+
+.mobile-nav svg, .mobile-nav img {
+    transition: all .5s linear;
+}
+
+nav {
+    height: 100vh;
+    width: 100%;
+    background:  rgba(37, 43, 70, .9);
+    padding: var(--padding);
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    z-index: 10;
+    transition: all .5s linear;
+}
+
+nav ul {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    list-style-type: none;
+    border-top: 1px solid var(--grayishblue);
+    width: 100%;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 70%;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+    transition: all;
+}
+
+nav ul li a:hover {
+    border: 2px solid white;
+}
+
+.icons {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons svg:nth-child(1) {
+    margin-right: 20px;
+}
+/* ==== */
+
+/* Section one */
+
+.s-one {
+    display: grid;
+    width: 100%;
+    padding: var(--padding);
+    margin-top: 1rem;
+}
+
+.s-oneimg {
+    height: 390px;
+    position: relative;
+}
+
+.pattern {
+    width: 80%;
+    height: 250px;
+    background: var(--softblue);
+    position: absolute;
+    bottom: 0px;
+    right: -30px;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    z-index: -1;
+}
+
+.s-one img {
+    width: 100%;
+    height: 310px
+}
+
+.s-onesimple {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.s-onesimple h1 {
+    margin-bottom: 1.5rem;
+}
+
+.s-onesimple p {
+    color: var(--grayishblue);
+    line-height: 150%;
+    margin-bottom: 1.5rem;
+    font-size: 90%;
+}
+
+.s-onelinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.s-onelinks a{
+    text-decoration: none;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    font-size: 80%;
+    font-weight: var(--mediumfontweight);
+    border-radius: 5px
+}
+
+.s-onelinks a:nth-child(1) {
+    background: var(--softblue);
+    color: white;
+    margin-right: 10px;
+}
+
+.s-onelinks a:nth-child(1):hover {
+    background: white;
+    color: var(--softblue);
+    border: 2px solid var(--softblue);
+}
+
+.s-onelinks a:nth-child(2) {
+    background:hsl(230, 15%, 92%);
+    color: var(--verydarkblue);
+}
+
+.s-onelinks a:nth-child(2):hover {
+    background: white;
+    border: 2px solid var(--verydarkblue);
+}
+/* ========= */
+
+
+@media screen and (min-width: 768px) {
+    .mobile-nav, #close, .icons {
+        display: none;
+    }
+
+    #close {
+        display: none;
+    }
+
+    header {
+        padding: 0 30px;
+    }
+
+    nav {
+        height: 10vh;
+        background: white;
+        padding: 0px;
+        position: static;
+        display: flex;
+    }
+
+    .thedrop {
+        flex: 1;
+    }
+
+    nav ul {
+        flex: 1;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        border-top: none;
+        width: auto;
+    }
+
+    nav ul li a {
+        width: 95px;
+        height: auto;
+        font-size: 70%;
+        padding: 10px 15px;
+        color: var(--verydarkblue);
+        font-weight: var(--mediumfontweight);
+    }
+
+    #login {
+        background: var(--softred);
+        color: white; 
+    }
+
+    #login:hover {
+        border: 2px solid var(--softred);
+        background: white;
+        color: var(--softred)
+    }
+
+    nav ul li a:hover {
+        border: none;
+        color: var(--softred)
+    }
+
+    .s-one {
+        grid-template-columns: 50% 2fr;
+        grid-column-gap: 10px;
+    }
+
+    .s-one img {
+        height: 250px
+    }
+
+    .s-onesimple, .s-oneimg {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        justify-content: center;
+    }
+
+    .s-oneimg {
+        grid-column: 3/2;
+    }
+
+    .s-onesimple {
+        grid-row: 1/2;
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .thedrop {
+        flex: 2;
+    }
+
+    header {
+        padding: var(--largepadding);
+    }
+
+    .s-one {
+        padding: var(--largepadding);
+        grid-column-gap: 6rem;
+    }
+
+    .s-one img {
+        height: 350px
+    }
+
+    .s-oneimg {
+        height: 500px;
+        position: relative;
+    }
+
+    .s-onesimple {
+        padding-right: 5rem;
+    }
+
+    .pattern {
+        width: 80%;
+        height: 300px;
+        right: -100px;
+    }
+
+
+    .s-onesimple h1 {
+        margin-bottom: 1.5rem;
+        font-size: 45px;
+        text-transform: capitalize;
+        font-weight: 450;
+    }
+
+    .s-onesimple p {
+        line-height: 150%;
+        margin-bottom: 1.5rem;
+        font-size: 100%;
+    }
+
+    .s-onelinks a{
+        height: 40px;
+        padding: 0 10px;
+        font-size: 90%;
+    }
+
+    .s-onelinks a:nth-child(1) {
+        margin-right: 20px;
+    }
+}
