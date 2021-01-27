@@ -50,7 +50,7 @@ nav {
     width: 100%;
     background:  rgba(37, 43, 70, .9);
     padding: var(--padding);
-    position: absolute;
+    position: fixed;
     top: -100vh;
     left: 0;
     z-index: 10;
@@ -93,15 +93,24 @@ nav ul li a:hover {
     border: 2px solid white;
 }
 
-.icons {
+.icons, .footer-icons {
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.icons svg:nth-child(1) {
-    margin-right: 20px;
+.icons svg:nth-child(1), .footer-icons svg:nth-child(1) {
+    margin-right: 30px;
+}
+
+.icons svg, .footer-icons svg {
+    fill: #fff;
+    transition: all;
+}
+
+.icons svg:hover, .footer-icons svg:hover {
+    fill: var(--softred);
 }
 /* ==== */
 
@@ -141,12 +150,21 @@ nav ul li a:hover {
     margin-top: 3rem;
 }
 
-.s-onesimple h1, .features h2, .s-twoinfo h2, .download h2 {
+.s-onesimple h1, 
+.features h2, 
+.s-twoinfo h2, 
+.download h2,
+.faq h2 {
     margin-bottom: 1.5rem;
     color: var(--verydarkblue);
 }
 
-.s-onesimple p, .features p, .s-twoinfo p, .download p {
+.s-onesimple p, 
+.features p, 
+.s-twoinfo p, 
+.download p,
+.faq p,
+.thefaqs p {
     color: var(--grayishblue);
     line-height: 150%;
     margin-bottom: 1.5rem;
@@ -317,7 +335,6 @@ nav ul li a:hover {
 }
 
 .install {
-    border-top: 3px dotted var(--grayishblue);
     height: 100px;
     display: flex;
     align-items: center;
@@ -333,13 +350,220 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.install a:hover {
+.install a:hover, .more-info:hover {
     color: var(--softblue);
     border: 2px solid var(--softblue);
     background: transparent;
 }
 
+.dots {
+    width: 100%;
+}
+
 /* ================ */
+
+/* FAQs */
+
+.faq {
+    width: 100%;
+    padding: var(--padding);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.question {
+    border-bottom: 1px solid var(--grayishblue);
+    width: 100%;
+}
+
+.thefaqs {
+    padding: var(--padding);
+    margin-bottom: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.question-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.question-title > p {
+    color: var(--verydarkblue);
+    font-weight: var(--mediumfontweight);
+    margin-bottom: 0;
+    
+}
+
+.question-title > button {
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.question-title > button > span > svg {
+    stroke: #5267DF;
+    transition: all .5s ease-in-out;
+}
+
+.question-title > button:hover > span > svg {
+    stroke: var(--softred);
+    transform: rotateX(180deg);
+}
+
+.texts {
+    display: none;
+}
+
+.show-text .texts {
+    display: block;
+}
+
+.question-title > button > span >.newsvg {
+    transform: rotateX(180deg);
+    stroke: var(--softred);
+    transition: all .5s ease-in-out;
+}
+
+.question-title > button:hover > span >.newsvg {
+    transform: rotateX(360deg);
+    stroke: var(--softblue);
+}
+
+.more-info {
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+    text-decoration: none;
+    background: var(--softblue);
+    color: white;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+}
+/* ==== */
+
+/* The form */
+
+.theform {
+    padding: var(--padding);
+    background: var(--softblue);
+    color:whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theform > p {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.theform h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: var(--regularfontweight);
+}
+
+form {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding-left: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--grayishblue);
+}
+
+.input-area {
+    margin-bottom: 1rem;
+}
+
+form button {
+    height: 40px;
+    width: 100%;
+    background: var(--softred);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-weight: var(--mediumfontweight);
+}
+
+form button:hover {
+    color: var(--softred);
+    border: 2px solid var(--softred);
+    background: white;
+}
+
+.email-error {
+    display: none;
+    background: var(--softred);
+    font-size: 12px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+/* ======== */
+
+/* Footer */
+
+footer {
+    background: var(--verydarkblue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding);
+    text-align: center;
+}
+
+footer img {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    
+}
+
+footer ul li {
+    margin: 2rem 0;
+}
+
+footer ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer ul li a:hover {
+    color: var(--softred)
+}
+/* ====== */
+
 @media screen and (min-width: 768px) {
     .mobile-nav, #close, .icons {
         display: none;
@@ -502,6 +726,43 @@ nav ul li a:hover {
         margin-top: 4rem;
     }
 
+    form {
+        flex-direction: row;
+        padding: 0 6rem;
+    }
+
+    .input-area {
+        flex: 2.5;
+        margin-right: 2rem;
+    }
+
+    form button {
+        flex: 1;
+    }
+
+    footer {
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: var(--padding);
+        text-align: center;
+    }
+
+    footer img {
+        margin: 0;
+    }
+
+    footer ul {
+        flex: 1;
+        display: flex;
+        margin-left: 5rem;
+    }
+
+    footer ul li {
+        margin-right: 2rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -623,5 +884,25 @@ nav ul li a:hover {
 
     .download-grid > div:nth-child(3) {
         margin-top: 6rem;
+    }
+
+    .thefaqs, .faq {
+        padding: 0 300px;
+    }
+
+    form {
+        padding: 0 20rem;
+    }
+
+    footer {
+        padding: var(--largepadding);
+    }
+
+    footer ul {
+        margin-left: 8rem;
+    }
+
+    footer ul li {
+        margin-right: 4rem;
     }
 }
