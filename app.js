@@ -8,12 +8,14 @@ drop.addEventListener('click', function() {
     nav.style.top = "0vh"
     drop.style.opacity = "0";
     logo.style.opacity = "0";
+    document.body.style.overflow = "hidden"
 })
 
 undrop.addEventListener('click', function() {
     nav.style.top = "-100vh"
     drop.style.opacity = "1";
     logo.style.opacity = "1";
+    document.body.style.overflow = "visible"
 })
 
 // Tabs selectors

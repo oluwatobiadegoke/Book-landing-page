@@ -50,6 +50,7 @@ nav {
     width: 100%;
     background:  rgba(37, 43, 70, .9);
     padding: var(--padding);
+    padding-bottom: 10vh;
     position: fixed;
     top: -100vh;
     left: 0;
