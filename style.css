@@ -415,11 +415,6 @@ nav ul li a:hover {
     transition: all .5s ease-in-out;
 }
 
-.question-title > button:hover > span > svg {
-    stroke: var(--softred);
-    transform: rotateX(180deg);
-}
-
 .texts {
     display: none;
 }
@@ -432,11 +427,6 @@ nav ul li a:hover {
     transform: rotateX(180deg);
     stroke: var(--softred);
     transition: all .5s ease-in-out;
-}
-
-.question-title > button:hover > span >.newsvg {
-    transform: rotateX(360deg);
-    stroke: var(--softblue);
 }
 
 .more-info {
